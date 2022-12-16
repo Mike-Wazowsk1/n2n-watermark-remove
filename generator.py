@@ -61,7 +61,7 @@ class ValGenerator(Sequence):
             h, w, _ = y.shape
             y = y[:(h // 16) * 16, :(w // 16) * 16]  # for stride (maximum 16)
             x = val_noise_model(y)
-            self.data.append([np.expand_dims(x, axis=0), np.expand_dims(y, axis=0)])
+            self.data.append((np.expand_dims(x, axis=0), np.expand_dims(y, axis=0)))
 
     def __len__(self):
         return self.image_num
