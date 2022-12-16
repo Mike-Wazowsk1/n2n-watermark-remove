@@ -38,7 +38,7 @@ def get_args():
                         help="number of epochs")
     parser.add_argument("--lr", type=float, default=0.01,
                         help="learning rate")
-    parser.add_argument("--steps", type=int, default=1000,
+    parser.add_argument("--steps", type=int, default=300,
                         help="steps per epoch")
     parser.add_argument("--loss", type=str, default="mse",
                         help="loss; mse', 'mae', or 'l0' is expected")
@@ -75,7 +75,7 @@ def main():
     if args.weight is not None:
         model.load_weights(args.weight)
 
-    opt = Adam(lr=lr)
+    opt = Adam(learning_rate=lr)
     callbacks = []
 
     if loss_type == "l0":
