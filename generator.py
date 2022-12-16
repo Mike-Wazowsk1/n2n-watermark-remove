@@ -2,8 +2,7 @@ from pathlib import Path
 import random
 import numpy as np
 import cv2
-from keras.utils import Sequence
-
+from tensorflow.keras.utils import Sequence
 
 class NoisyImageGenerator(Sequence):
     def __init__(self, image_dir, source_noise_model, target_noise_model, batch_size=32, image_size=64):
