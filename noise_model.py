@@ -32,7 +32,7 @@ def get_noise_model(noise_type="gaussian,0,50"):
             TRANSPARENCY = random.randint(88, 97)
 
             image = Image.fromarray(img)
-            watermark = Image.open('1.png')
+            watermark = Image.open('/kaggle/working/n2n-watermark-remove/4.png')
 
             if watermark.mode!='RGBA':
                 alpha = Image.new('L', watermark.size, 255)
